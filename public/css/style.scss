@@ -1,0 +1,100 @@
+@import "reset";
+@import "mixins";
+
+$cc-brown:#64391c;
+$cc-brown-font:#643c1f;
+$cc-gray:#a5a5a5;
+
+$saa-red:#f94a2d;
+
+// Global Styles
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.nav-wrapper{
+	@include center-max-width(625px);
+	margin:5em auto;
+	position:relative;
+}
+
+.deity-name-wrapper{
+	width:283px;
+	height:100px;
+	position:relative;
+	background-color:$saa-red;
+	padding-left:33px;
+	// lower triangle
+	@include transition(background-color, 0.2s, ease-out);
+	&:before{
+		content:'';
+		width:0;
+		height:0;
+		position:absolute;
+		bottom:-45px; left:0;
+		border-top:45px solid $saa-red;
+		border-right:45px solid transparent;
+		@include transition(border-top, 0.2s, ease-out);
+	}
+	// far right triangle
+	&:after{
+		content:'';
+		width:50px;
+		height:0;
+		position:absolute;
+		right:-45px; top:0;
+		border-top:100px solid $saa-red;
+		border-right:46px solid transparent;
+		@include transition(border-top, 0.2s, ease-out);
+	}
+}
+
+.deity-name{
+	color:white;
+	@include vertical-align();
+	font-size:1.5em;
+	letter-spacing:0.1em;
+	@include single-text-shadow(2px, 2px, 1px, rgba(0,0,0, 0.5));
+}
+
+.deity-nav-items{
+	position:absolute;
+	left:320px;top:0;
+	display:flex;
+}
+
+.deity-nav-item{
+	display: inline-block;
+		width: 15px;
+		height: 55px;
+		margin-right:0.25em;
+		@include transition(height, 0.2s, ease-out);
+		@include transition(margin-right, 0.2s, ease-out);
+		@include transition(margin-left, 0.2s, ease-out);
+		@include transition(background-color, 0.2s, ease-out);
+		-webkit-transform: skew(-25deg);
+		   -moz-transform: skew(-25deg);
+		     -o-transform: skew(-25deg);
+		background: black;
+		/*&:hover{
+			background-color:lighten($saa-red, 10%);
+		}*/
+}
+
+.deity-nav-item-hover{
+	background-color:lighten($saa-red, 10%);
+}
+
+.deity-nav-item-active{
+	height:200px;
+	margin-left: -34px;
+    margin-right: 38px;
+    background: $saa-red;
+}
+
+
+
+
+
+
+

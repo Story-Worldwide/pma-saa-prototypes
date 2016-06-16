@@ -1,0 +1,184 @@
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin center-max-width($width){
+	margin:0px auto; 
+	max-width:$width; 
+}
+
+// Enter a px size to return an em size based on default font size
+@function em($px, $base: $default-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+@mixin border-radius($val){
+	-moz-border-radius: $val; 
+	-webkit-border-radius: $val; 
+	border-radius: $val;
+}
+
+@mixin background-size($val){
+	-webkit-background-size: $val;
+	-moz-background-size: $val;
+	-o-background-size: $val;
+	background-size: $val;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin opacity($opacity){
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	position: absolute;
+}
+
+@mixin pos-fixed($top:auto, $right:auto, $left:auto, $bottom:auto){
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	position:fixed;
+}
+
+@mixin linear-gradient($from, $to) {
+     background-image:-moz-linear-gradient($from, $to);
+     background-image:-o-linear-gradient($from, $to);
+     background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+     background-image: -webkit-linear-gradient($from, $to);
+	 background-image: -ms-linear-gradient($from, $to);
+	 background-image:linear-gradient($from, $to);
+}
+
+@mixin wh($w:auto, $h:auto) {
+	width:$w;
+	height:$h;
+}
+@mixin sizeheight($s:1em, $h:1em){
+	font-size:$s;
+	line-height: $h;
+}
+
+
+@mixin shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; 
+     -moz-box-sizing: $box-model;
+          box-sizing: $box-model;
+}
+
+@mixin transform($param) {
+	-webkit-transform: $param;
+	-moz-transform: $param;
+	-ms-transform: $param;
+	-o-transform: $param;
+}
+
+@mixin single-text-shadow($hoff, $voff, $blur, $color) {
+	text-shadow: $hoff $voff $blur $color;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+@mixin breakpoint($point) {
+  @if $point == 650 {
+     @media (min-width: 650px) { @content; }
+  }
+  @else if $point == 750{
+    @media (min-width: 750px) { @content; }
+  }
+ /* @if $point == 500 {
+	  @media (min-width: 500px) { @content; }
+  }
+  @else if $point == max560 {
+    @media (max-width: 560px) { @content; }
+  }
+  @else if $point == 600 {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == 690 {
+    @media (min-width: 690px) { @content; }
+  }
+  @else if $point == 700 {
+    @media (min-width: 700px) { @content; }
+  }
+   @else if $point == 740 {
+    @media (min-width: 740px) { @content; }
+  }
+   @else if $point == 900 {
+    @media (min-width: 900px) { @content; }
+  }
+   @else if $point == 1000 {
+    @media (min-width: 1000px) { @content; }
+  }
+   @else if $point == 1100 {
+    @media (min-width: 1100px) { @content; }
+  }
+   @else if $point == 1266 {
+    @media (min-width: 1266px) { @content; }
+  }
+   @else if $point == 1400 {
+    @media (min-width: 1400px) { @content; }
+  }
+
+  
+  @else if $point == mobile {
+  	@media only screen and (max-device-width : 1136px){ @content; }
+  }*/
+}
+
+
+@mixin responsive-img{
+	width:100%;
+	height:auto;
+	display: block;
+}
+
+
+
+
+// Functions
+@function get-vw($target) { 
+  $vw-context: (900*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw($size) {
+  font-size: get-vw($size);
+  @media #{$widescreen} {
+    font-size: $size;
+  }
+}
