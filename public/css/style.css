@@ -118,7 +118,35 @@ body {
   transform: translateY(-50%);
   font-size: 1.5em;
   letter-spacing: 0.1em;
+  -webkit-transition: top, 0.2s, ease-out;
+  -moz-transition: top, 0.2s, ease-out;
+  -ms-transition: top, 0.2s, ease-out;
+  -o-transition: top, 0.2s, ease-out;
+  transition: top, 0.2s, ease-out;
+  -webkit-transition: opacity, 0.2s, ease-out;
+  -moz-transition: opacity, 0.2s, ease-out;
+  -ms-transition: opacity, 0.2s, ease-out;
+  -o-transition: opacity, 0.2s, ease-out;
+  transition: opacity, 0.2s, ease-out;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5); }
+
+@keyframes deity-name-inout {
+  0% {
+    top: 50%; }
+  50% {
+    top: 90%;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  75% {
+    top: 25%;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  100% {
+    top: 50%;
+    opacity: 1;
+    filter: alpha(opacity=100); } }
+.deity-name-active {
+  animation: deity-name-inout 1s 1; }
 
 .deity-nav-items {
   position: absolute;

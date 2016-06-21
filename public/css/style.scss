@@ -54,7 +54,33 @@ body {
 	@include vertical-align();
 	font-size:1.5em;
 	letter-spacing:0.1em;
+	@include transition(top, 0.2s, ease-out);
+	@include transition(opacity, 0.2s, ease-out);
 	@include single-text-shadow(2px, 2px, 1px, rgba(0,0,0, 0.5));
+}
+
+@keyframes deity-name-inout {
+  0% {
+    top:50%;
+  }
+  50% {
+    top:90%;
+    @include opacity(0);
+  }
+  75% {
+  	top:25%;
+  	@include opacity(0);
+  }
+  100% {
+  	top:50%;
+    @include opacity(1);
+  }
+}
+
+
+.deity-name-active{
+	animation: deity-name-inout 1s 1;
+	
 }
 
 .deity-nav-items{
