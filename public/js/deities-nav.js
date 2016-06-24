@@ -33,4 +33,20 @@ $(document).ready(function(){
 	 	})
 	 });
 
+
+
+
+	 // Sidebar Filter Page
+	 $('.wrapper-header-filter-btn').click(function(e){
+	 	e.preventDefault();
+	 	$('.filter-sidebar').toggleClass('filter-sidebar-active');
+	 });
+
+
+	 // Slidedown Filter Page
+	  $('.wrapper-header-slidedown-filter-btn').click(function(e){
+	 	e.preventDefault();
+	 	$('.filter-slidedown').toggleClass('filter-slidedown-active');
+	 });
+
 });
