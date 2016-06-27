@@ -49,4 +49,37 @@ $(document).ready(function(){
 	 	$('.filter-slidedown').toggleClass('filter-slidedown-active');
 	 });
 
+	  // Filter Form Click to reveal option selects
+	  $('.filter-form-heading').each(function(){
+	  		$(this).click(function(){
+	  			console.log('foo');
+	  			$(this).next().toggleClass('filter-form-option-in').toggleClass('fade-in');
+	  			$(this).find('.filter-form--option').toggleClass('filter-form-option-open');
+	  		});
+	  });
+
+	  // Options Checkbox click
+	  $('.filter-form-selects-checkbox').each(function(){
+	  	$(this).click(function(e){
+	  		e.preventDefault;
+	  		console.log('checkbox clicked');
+	  		$(this).toggleClass('selected');
+	  	});
+	  });
+
+
+	  // Filter Options Date Slider
+	  $( "#slider" ).slider({
+	      value:100,
+	      min: 12,
+	      max: 20,
+	      step: 1,
+	      slide: function( event, ui ) {
+	        $( "#amount" ).val( ui.value +"th Century" );
+	      }
+	    });
+	    $( "#amount" ).val($( "#slider" ).slider( "value" ) +"th Century" );
+
+
+
 });

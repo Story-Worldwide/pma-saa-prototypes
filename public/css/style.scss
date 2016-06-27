@@ -13,10 +13,25 @@ body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.btn{
+	//border:1px solid red;
+	//padding:10px;
+}
+
 .nav-wrapper{
 	@include center-max-width(625px);
 	margin:5em auto;
 	position:relative;
+}
+
+.linebreak{
+	background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    color: #000;
+    display:block;
+    width:100%;
+    height:1px;
+    margin-top:1em;
 }
 
 .deity-name-wrapper{
@@ -212,6 +227,143 @@ body {
 		font-size:16px;
 	}
 }
+
+
+// FILTER - FORM elements
+.filter-form-wrapper{
+	//border:1px solid gray;
+	@include center-max-width(300px);
+	margin:100px auto;
+}
+
+.filter-form-dimension{
+	//border:1px solid red;
+}
+
+.filter-form-heading{
+	//border:1px solid blue;
+	text-transform: uppercase;
+    font-size: 14px;
+    padding: 21px 0 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.filter-form--option{
+	font-style: normal;
+	font-weight: 400;
+	//border:1px solid orange;
+	&:after{
+		content:'+';
+		position:absolute;
+		right:8px;
+		top:21px;
+		width:1em;
+		height:1em;
+		//border:1px solid red;
+	}
+}
+
+.filter-form-option-selects{
+	//border:1px solid green;
+	max-height: 0px;
+    line-height: 24px;
+    @include opacity(0);
+    overflow-y: hidden;
+    visibility: hidden;
+    width: 100%;
+    @include transition(all, 0.3s, ease-out);
+    >ul{
+    	margin: 0 0 4px;
+    	//border:2px solid purple;
+    }
+}
+
+.filter-form-selects-checkbox{
+	display:block;
+	//border:1px solid pink;
+	padding-left:27px;
+	position:relative;
+	color:black;
+	font-size:14px;
+	@include transition(color, 0.1s, ease-out);
+	&:hover{
+		color:$saa-bright-red;
+	}
+	&:before{
+		content: '';
+	    width: 14px;
+	    height: 14px;
+	    border: 1px solid #e5e5e5;
+	    border-radius: 2px;
+	    display: inline-block;
+	    margin-left: -27px;
+	    position: relative;
+	    top: 3px;
+	}
+	>label{
+		margin-left: -2px;
+		cursor:pointer;
+	}
+
+}
+
+.filter-form-selects-checkbox.selected{
+		&:after{
+			position: absolute;
+		    -webkit-transform: rotate(-45deg);
+		    transform: rotate(-45deg);
+		    content: '';
+		    border-width: 0 0 2px 2px !important;
+		    height: 6px;
+		    width: 9px;
+		    border: solid #111;
+		    margin: 9px 0 0 2px;
+		    left: 0;
+		    top: 0;
+		}
+	}
+
+// An Open Filter option
+.filter-form-option-in{
+	display:block;
+	visibility:visible;
+	max-height:999em;
+}
+.filter-form-option-open{
+	&:after{
+		content:'-';
+	}
+}
+
+.fade-in{
+	@include opacity(1);
+}
+
+
+// 'More Filters Button'
+.more-filters-btn{
+	text-align:center;
+	border:1px solid $cc-gray;
+	>a{
+		display:block;	
+		padding:10px;
+		@include transition(all, 0.2s, ease-out);
+		&:hover{
+			background:$saa-bright-red;
+			color:white;
+		}
+	}
+}
+
+// Date Ranger Slider
+#amount{
+	margin:1em auto;
+}
+#slider{
+	@include center-max-width(80%);
+}
+.ui-slider-handle{ outline:none; }
 
 
 
