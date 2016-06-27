@@ -138,7 +138,7 @@ body {
 
 
 // Filter Prototypes
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Slideout section
 .filter-slideout-wrapper{
 	border:1px solid orange;
@@ -247,6 +247,9 @@ body {
     padding: 21px 0 5px;
     cursor: pointer;
     position: relative;
+    &:hover{
+    	color:red;
+    }
 }
 
 .filter-form--option{

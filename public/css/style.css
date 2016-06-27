@@ -295,6 +295,8 @@ body {
   padding: 21px 0 5px;
   cursor: pointer;
   position: relative; }
+  .filter-form-heading:hover {
+    color: red; }
 
 .filter-form--option {
   font-style: normal;
