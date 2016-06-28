@@ -141,10 +141,11 @@ body {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Slideout section
 .filter-slideout-wrapper{
-	border:1px solid orange;
+	//border:1px solid orange;
 	@include center-max-width(890px);
 	//padding:0 19px;
 	margin-top:100px;
+	margin-bottom:100px;
 	//height:2000px;
 	overflow:hidden;
 	position:relative;
@@ -177,17 +178,25 @@ body {
 }
 
 .filter-sidebar{
-	background:black;
+	background:white;
 	position:absolute;
 	top:50px;
 	left:-288px;
 	width:288px;
 	height:100%;
 	@include transition(left, 0.3s, ease-out);
+	overflow:scroll;
+	.filter-form-wrapper{
+		margin:10px auto 100px;
+    	padding: 1em;
+    	//border-top: 1px solid black;
+    	//border-bottom: 1px solid black;
+	}
 }
 
 .filter-sidebar-active{
 	left:0;
+	@include box-shadow($horiz:0.25em, $vert:0em, $blur:4px, $spread:-2px, $color: rgba(0,0,0,0.75em));
 }
 
 .filter-slidedown{
@@ -215,7 +224,8 @@ body {
 		border:1px solid purple;
 		//height:350px;
 		background:gray;
-		width:33%;
+		//width:33%;
+		width:100%;
 		display: block;
 		//margin: 0 0.25em 0.25em 0;
 		list-style-type: none;
@@ -225,6 +235,9 @@ body {
 		padding:5em;
 		color:aquamarine;
 		font-size:16px;
+		@include breakpoint(650){
+			width:33%;
+		}
 	}
 }
 

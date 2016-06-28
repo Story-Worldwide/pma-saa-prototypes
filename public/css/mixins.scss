@@ -87,6 +87,12 @@
     box-shadow: $x $y $blur $color;
 }
 
+@mixin box-shadow( $horiz : .5em , $vert : .5em , $blur : 0px , $spread : 0px , $color : #000000 ){
+  -webkit-box-shadow: $horiz $vert $blur $spread $color;
+  -moz-box-shadow: $horiz $vert $blur $spread $color;
+  box-shadow: $horiz $vert $blur $spread $color;
+}
+
 @mixin box-sizing($box-model) {
   -webkit-box-sizing: $box-model; 
      -moz-box-sizing: $box-model;
