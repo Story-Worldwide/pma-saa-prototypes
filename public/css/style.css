@@ -234,6 +234,20 @@ a, a:visited, a:hover {
 body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
+.main-wrapper {
+  margin: 0px auto;
+  max-width: 625px;
+  margin: 5em auto; }
+  .main-wrapper > h2 {
+    color: #f94a2d;
+    margin-bottom: 1em;
+    font-size: 18px; }
+  .main-wrapper .proto-example-wrapper {
+    margin-bottom: 1em; }
+    .main-wrapper .proto-example-wrapper > p a {
+      color: #ff0700;
+      text-decoration: underline; }
+
 .nav-wrapper {
   margin: 0px auto;
   max-width: 625px;

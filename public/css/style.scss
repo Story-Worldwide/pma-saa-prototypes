@@ -21,6 +21,23 @@ body {
 	//padding:10px;
 }
 
+.main-wrapper{
+	@include center-max-width(625px);
+	margin:5em auto;
+	>h2{
+		color:$saa-red;
+		margin-bottom:1em;
+		font-size:18px;
+	}
+	.proto-example-wrapper{
+		margin-bottom:1em;
+		>p a{
+			color:$saa-bright-red;
+			text-decoration:underline;
+		}
+	}
+}
+
 .nav-wrapper{
 	@include center-max-width(625px);
 	margin:5em auto;
