@@ -60,6 +60,177 @@ input, textarea, select {
 a, a:visited, a:hover {
   text-decoration: none; }
 
+.related-item-wrapper {
+  margin: 0px auto;
+  max-width: 900px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap; }
+  .related-item-wrapper > p {
+    display: block;
+    flex-basis: 100%;
+    margin-bottom: 10px; }
+
+.related-item {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  flex-basis: 100%;
+  max-height: 215px; }
+  .related-item .rollover-to-reveal-figcap {
+    display: block;
+    color: black; }
+    .related-item .rollover-to-reveal-figcap:hover .related-item-caption {
+      bottom: 0;
+      background-color: white; }
+  .related-item .rollover-to-scale-img-and-reveal-copy {
+    display: block;
+    color: black; }
+    .related-item .rollover-to-scale-img-and-reveal-copy .related-item-img {
+      -webkit-transition: all, 0.4s, ease-out;
+      -moz-transition: all, 0.4s, ease-out;
+      -ms-transition: all, 0.4s, ease-out;
+      -o-transition: all, 0.4s, ease-out;
+      transition: all, 0.4s, ease-out;
+      transform: scale(1.12); }
+    .related-item .rollover-to-scale-img-and-reveal-copy .related-item-caption {
+      bottom: 0; }
+      .related-item .rollover-to-scale-img-and-reveal-copy .related-item-caption > p {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transition: all, 0.5s, ease-out;
+        -moz-transition: all, 0.5s, ease-out;
+        -ms-transition: all, 0.5s, ease-out;
+        -o-transition: all, 0.5s, ease-out;
+        transition: all, 0.5s, ease-out; }
+    .related-item .rollover-to-scale-img-and-reveal-copy:hover .related-item-img {
+      transform: scale(1);
+      opacity: 0.8;
+      filter: alpha(opacity=80); }
+    .related-item .rollover-to-scale-img-and-reveal-copy:hover .related-item-caption {
+      bottom: 0;
+      background-color: inherit; }
+      .related-item .rollover-to-scale-img-and-reveal-copy:hover .related-item-caption > p {
+        opacity: 1;
+        filter: alpha(opacity=100); }
+  .related-item .rollover-to-reveal-opacity {
+    color: black; }
+    .related-item .rollover-to-reveal-opacity .related-item-caption {
+      bottom: 0;
+      opacity: 0;
+      filter: alpha(opacity=0); }
+    .related-item .rollover-to-reveal-opacity:hover .related-item-caption {
+      bottom: 0;
+      opacity: 1;
+      filter: alpha(opacity=100); }
+  .two-up .related-item {
+   /* @if $point == 500 {
+  	  @media (min-width: 500px) { @content; }
+    }
+    @else if $point == max560 {
+      @media (max-width: 560px) { @content; }
+    }
+    @else if $point == 600 {
+      @media (min-width: 600px) { @content; }
+    }
+    @else if $point == 690 {
+      @media (min-width: 690px) { @content; }
+    }
+    @else if $point == 700 {
+      @media (min-width: 700px) { @content; }
+    }
+     @else if $point == 740 {
+      @media (min-width: 740px) { @content; }
+    }
+     @else if $point == 900 {
+      @media (min-width: 900px) { @content; }
+    }
+     @else if $point == 1000 {
+      @media (min-width: 1000px) { @content; }
+    }
+     @else if $point == 1100 {
+      @media (min-width: 1100px) { @content; }
+    }
+     @else if $point == 1266 {
+      @media (min-width: 1266px) { @content; }
+    }
+     @else if $point == 1400 {
+      @media (min-width: 1400px) { @content; }
+    }
+  
+    
+    @else if $point == mobile {
+    	@media only screen and (max-device-width : 1136px){ @content; }
+    }*/ }
+    @media (min-width: 650px) {
+      .two-up .related-item {
+        flex-basis: 50%; } }
+  .three-up .related-item {
+   /* @if $point == 500 {
+  	  @media (min-width: 500px) { @content; }
+    }
+    @else if $point == max560 {
+      @media (max-width: 560px) { @content; }
+    }
+    @else if $point == 600 {
+      @media (min-width: 600px) { @content; }
+    }
+    @else if $point == 690 {
+      @media (min-width: 690px) { @content; }
+    }
+    @else if $point == 700 {
+      @media (min-width: 700px) { @content; }
+    }
+     @else if $point == 740 {
+      @media (min-width: 740px) { @content; }
+    }
+     @else if $point == 900 {
+      @media (min-width: 900px) { @content; }
+    }
+     @else if $point == 1000 {
+      @media (min-width: 1000px) { @content; }
+    }
+     @else if $point == 1100 {
+      @media (min-width: 1100px) { @content; }
+    }
+     @else if $point == 1266 {
+      @media (min-width: 1266px) { @content; }
+    }
+     @else if $point == 1400 {
+      @media (min-width: 1400px) { @content; }
+    }
+  
+    
+    @else if $point == mobile {
+    	@media only screen and (max-device-width : 1136px){ @content; }
+    }*/ }
+    @media (min-width: 650px) {
+      .three-up .related-item {
+        flex-basis: 33.3333%; } }
+
+.related-item-img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+.related-item-caption {
+  padding: 1em;
+  position: absolute;
+  width: 100%;
+  bottom: -200px;
+  -webkit-transition: all, 0.2s, ease-out;
+  -moz-transition: all, 0.2s, ease-out;
+  -ms-transition: all, 0.2s, ease-out;
+  -o-transition: all, 0.2s, ease-out;
+  transition: all, 0.2s, ease-out; }
+  .related-item-caption > h3 {
+    font-size: 18px;
+    line-height: 16px;
+    margin-bottom: 0.5em; }
+  .related-item-caption > p {
+    font-size: 14px;
+    line-height: 16px; }
+
 body {
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif; }
 

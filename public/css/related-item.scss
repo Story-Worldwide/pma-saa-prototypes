@@ -1,0 +1,123 @@
+.related-item-wrapper{
+  @include center-max-width(900px);
+  margin:100px auto;
+ // border:1px solid red;
+  display:flex;
+  flex-wrap:wrap;
+  >p{
+    display:block;
+    flex-basis:100%;
+    margin-bottom: 10px;
+  }
+}
+
+.related-item{
+  position:relative;
+  overflow: hidden;
+  width:100%;
+  flex-basis: 100%;
+  max-height:215px;
+
+  .rollover-to-reveal-figcap{
+    display:block;
+    color:black;
+    .related-item-img{
+
+    }
+    &:hover{
+     .related-item-caption{
+        bottom:0;
+        background-color:white;
+     }
+    }
+  }
+
+
+  .rollover-to-scale-img-and-reveal-copy{
+     display:block;
+     color:black;
+     
+     .related-item-img{
+     // background-color:black;
+        @include transition(all, 0.4s, ease-out);
+        transform: scale(1.12);
+      }
+      .related-item-caption{
+        bottom:0;
+        >p{
+           @include opacity(0);
+           @include transition(all, 0.5s, ease-out);
+        }
+      }
+      &:hover{
+       .related-item-img{
+           transform: scale(1);
+           @include opacity(.8);
+       }
+       .related-item-caption{
+          bottom:0;
+          background-color:inherit;
+           >p{
+             @include opacity(1);
+          }
+
+       }
+      }
+  }
+
+
+  .rollover-to-reveal-opacity{
+    color:black;
+    .related-item-caption{
+      bottom:0;
+      @include opacity(0);
+    }
+    &:hover{
+      .related-item-caption{
+        bottom:0;
+        @include opacity(1);
+      }
+    }
+
+  }
+
+
+
+  .two-up &{
+    @include breakpoint(650){
+      flex-basis: 50%;
+    }
+  }
+  
+  .three-up &{
+    @include breakpoint(650){
+      flex-basis: 33.3333%;
+    }
+  }
+  
+} // .related-item
+
+.related-item-img{
+  @include responsive-img();
+ // @include transition(all, 0.2s, 0.5s, ease-out);
+}
+
+.related-item-caption{
+    padding:1em;
+    position:absolute;
+    width:100%;
+    //background-color:white;
+    bottom:-200px;
+    @include transition(all, 0.2s, ease-out);
+    >h3{
+      font-size:18px; line-height:16px;
+      margin-bottom:0.5em;
+    }
+    >p{
+      font-size:14px; line-height:16px;
+    }
+}
+
+//.related-item-caption--on{
+ // bottom:0;
+//}

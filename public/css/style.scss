@@ -1,12 +1,15 @@
 @import "reset";
 @import "mixins";
 
+
 $cc-brown:#64391c;
 $cc-brown-font:#643c1f;
 $cc-gray:#a5a5a5;
 
 $saa-red:#f94a2d;
 $saa-bright-red:#ff0700;
+
+@import "related-item";
 
 // Global Styles
 body {
