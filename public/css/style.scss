@@ -38,11 +38,12 @@ body {
 }
 
 .deity-name-wrapper{
-	width:283px;
+	width:80%;
 	height:100px;
 	position:relative;
 	background-color:$saa-red;
 	padding-left:33px;
+	z-index:10;
 	// lower triangle
 	@include transition(background-color, 0.2s, ease-out);
 	&:before{
@@ -54,6 +55,7 @@ body {
 		border-top:45px solid $saa-red;
 		border-right:45px solid transparent;
 		@include transition(border-top, 0.2s, ease-out);
+		z-index: 10;
 	}
 	// far right triangle
 	&:after{
@@ -65,6 +67,30 @@ body {
 		border-top:100px solid $saa-red;
 		border-right:46px solid transparent;
 		@include transition(border-top, 0.2s, ease-out);
+	}
+
+	@include breakpoint(550){
+		width:283px;
+	}
+}
+
+// Mobile Version - allows the deity names to be revealed on mobile screens
+.deity-name-dropdown{
+	position:absolute;
+	height:100px;
+	width:25%;
+	right:-25%;
+	top:0;
+	cursor:pointer;
+	background-color:darken($saa-red, 18%);
+
+	.arrow-down{
+		position:absolute;
+		bottom:15%; right:15%;
+	}
+
+	@include breakpoint(550){
+		display:none;
 	}
 }
 
@@ -102,10 +128,57 @@ body {
 	
 }
 
+.deity-nav-items-mobile{
+	width:100%;
+	//position:absolute;
+	//top:0px;
+	z-index:1;
+	overflow-y:hidden;
+	//border:5px solid purple;
+	//@include opacity(0);
+	//display:none;
+	
+	>ul{
+		//position:absolute;
+		//top:-900px;
+		//width:100%;
+		margin-top:-900px;
+		@include transition(all, 0.2s, ease-out);
+	}
+	>ul a{
+		color:white;
+		display:block;
+		padding:1em 2em;
+		background:darken($saa-red, 10%);
+		&:nth-child(odd){
+			text-align: right;
+			background:darken($saa-red, 15%);
+		}
+
+	}
+
+	@include breakpoint(550){
+		display:none;
+	}
+}
+
+.deity-nav-items-mobile--on{
+	//top:100px;
+	//height:800px;
+	>ul{
+		margin-top:0;
+		
+	}
+	//display:block;
+}
+
 .deity-nav-items{
 	position:absolute;
 	left:320px;top:0;
-	display:flex;
+	display:none;
+	@include breakpoint(550){
+		display:flex;
+	}
 }
 
 .deity-nav-item{
@@ -121,9 +194,6 @@ body {
 		   -moz-transform: skew(-25deg);
 		     -o-transform: skew(-25deg);
 		background: black;
-		/*&:hover{
-			background-color:lighten($saa-red, 10%);
-		}*/
 }
 
 .deity-nav-item-hover{

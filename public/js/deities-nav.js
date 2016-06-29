@@ -69,7 +69,8 @@ $(document).ready(function(){
 
 
 	  // Filter Options Date Slider
-	  $( "#slider" ).slider({
+	  $('#slider').exists(function() {
+		   $( "#slider" ).slider({
 	      value:100,
 	      min: 12,
 	      max: 20,
@@ -79,7 +80,32 @@ $(document).ready(function(){
 	      }
 	    });
 	    $( "#amount" ).val($( "#slider" ).slider( "value" ) +"th Century" );
+	});
+
+	 
+
+
+
+
+	  // Deity Nav 3 - Arrow Click to reveal mobile menu
+	  $('.arrow-down').click(function(e){
+	  	e.preventDefault;
+	  	$('.deity-nav-items-mobile').toggleClass('deity-nav-items-mobile--on');
+	  	//$('.deity-nav-items-mobile').fadeToggle().css("display","inline-block");
+	  	//$('.deity-nav-items-mobile').fadeToggle();
+	  });
 
 
 
 });
+
+
+$.fn.exists = function(callback) {
+  var args = [].slice.call(arguments, 1);
+
+  if (this.length) {
+    callback.call(this, args);
+  }
+
+  return this;
+};

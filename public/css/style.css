@@ -250,16 +250,55 @@ body {
   margin-top: 1em; }
 
 .deity-name-wrapper {
-  width: 283px;
+  width: 80%;
   height: 100px;
   position: relative;
   background-color: #f94a2d;
   padding-left: 33px;
+  z-index: 10;
   -webkit-transition: background-color, 0.2s, ease-out;
   -moz-transition: background-color, 0.2s, ease-out;
   -ms-transition: background-color, 0.2s, ease-out;
   -o-transition: background-color, 0.2s, ease-out;
-  transition: background-color, 0.2s, ease-out; }
+  transition: background-color, 0.2s, ease-out;
+ /* @if $point == 500 {
+	  @media (min-width: 500px) { @content; }
+  }
+  @else if $point == max560 {
+    @media (max-width: 560px) { @content; }
+  }
+  @else if $point == 600 {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == 690 {
+    @media (min-width: 690px) { @content; }
+  }
+  @else if $point == 700 {
+    @media (min-width: 700px) { @content; }
+  }
+   @else if $point == 740 {
+    @media (min-width: 740px) { @content; }
+  }
+   @else if $point == 900 {
+    @media (min-width: 900px) { @content; }
+  }
+   @else if $point == 1000 {
+    @media (min-width: 1000px) { @content; }
+  }
+   @else if $point == 1100 {
+    @media (min-width: 1100px) { @content; }
+  }
+   @else if $point == 1266 {
+    @media (min-width: 1266px) { @content; }
+  }
+   @else if $point == 1400 {
+    @media (min-width: 1400px) { @content; }
+  }
+
+  
+  @else if $point == mobile {
+  	@media only screen and (max-device-width : 1136px){ @content; }
+  }*/ }
   .deity-name-wrapper:before {
     content: '';
     width: 0;
@@ -273,7 +312,8 @@ body {
     -moz-transition: border-top, 0.2s, ease-out;
     -ms-transition: border-top, 0.2s, ease-out;
     -o-transition: border-top, 0.2s, ease-out;
-    transition: border-top, 0.2s, ease-out; }
+    transition: border-top, 0.2s, ease-out;
+    z-index: 10; }
   .deity-name-wrapper:after {
     content: '';
     width: 50px;
@@ -288,6 +328,63 @@ body {
     -ms-transition: border-top, 0.2s, ease-out;
     -o-transition: border-top, 0.2s, ease-out;
     transition: border-top, 0.2s, ease-out; }
+  @media (min-width: 550px) {
+    .deity-name-wrapper {
+      width: 283px; } }
+
+.deity-name-dropdown {
+  position: absolute;
+  height: 100px;
+  width: 25%;
+  right: -25%;
+  top: 0;
+  cursor: pointer;
+  background-color: #c52106;
+ /* @if $point == 500 {
+	  @media (min-width: 500px) { @content; }
+  }
+  @else if $point == max560 {
+    @media (max-width: 560px) { @content; }
+  }
+  @else if $point == 600 {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == 690 {
+    @media (min-width: 690px) { @content; }
+  }
+  @else if $point == 700 {
+    @media (min-width: 700px) { @content; }
+  }
+   @else if $point == 740 {
+    @media (min-width: 740px) { @content; }
+  }
+   @else if $point == 900 {
+    @media (min-width: 900px) { @content; }
+  }
+   @else if $point == 1000 {
+    @media (min-width: 1000px) { @content; }
+  }
+   @else if $point == 1100 {
+    @media (min-width: 1100px) { @content; }
+  }
+   @else if $point == 1266 {
+    @media (min-width: 1266px) { @content; }
+  }
+   @else if $point == 1400 {
+    @media (min-width: 1400px) { @content; }
+  }
+
+  
+  @else if $point == mobile {
+  	@media only screen and (max-device-width : 1136px){ @content; }
+  }*/ }
+  .deity-name-dropdown .arrow-down {
+    position: absolute;
+    bottom: 15%;
+    right: 15%; }
+  @media (min-width: 550px) {
+    .deity-name-dropdown {
+      display: none; } }
 
 .deity-name {
   color: white;
@@ -328,11 +425,116 @@ body {
 .deity-name-active {
   animation: deity-name-inout 1s 1; }
 
+.deity-nav-items-mobile {
+  width: 100%;
+  z-index: 1;
+  overflow-y: hidden;
+ /* @if $point == 500 {
+	  @media (min-width: 500px) { @content; }
+  }
+  @else if $point == max560 {
+    @media (max-width: 560px) { @content; }
+  }
+  @else if $point == 600 {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == 690 {
+    @media (min-width: 690px) { @content; }
+  }
+  @else if $point == 700 {
+    @media (min-width: 700px) { @content; }
+  }
+   @else if $point == 740 {
+    @media (min-width: 740px) { @content; }
+  }
+   @else if $point == 900 {
+    @media (min-width: 900px) { @content; }
+  }
+   @else if $point == 1000 {
+    @media (min-width: 1000px) { @content; }
+  }
+   @else if $point == 1100 {
+    @media (min-width: 1100px) { @content; }
+  }
+   @else if $point == 1266 {
+    @media (min-width: 1266px) { @content; }
+  }
+   @else if $point == 1400 {
+    @media (min-width: 1400px) { @content; }
+  }
+
+  
+  @else if $point == mobile {
+  	@media only screen and (max-device-width : 1136px){ @content; }
+  }*/ }
+  .deity-nav-items-mobile > ul {
+    margin-top: -900px;
+    -webkit-transition: all, 0.2s, ease-out;
+    -moz-transition: all, 0.2s, ease-out;
+    -ms-transition: all, 0.2s, ease-out;
+    -o-transition: all, 0.2s, ease-out;
+    transition: all, 0.2s, ease-out; }
+  .deity-nav-items-mobile > ul a {
+    color: white;
+    display: block;
+    padding: 1em 2em;
+    background: #ec2707; }
+    .deity-nav-items-mobile > ul a:nth-child(odd) {
+      text-align: right;
+      background: #d32306; }
+  @media (min-width: 550px) {
+    .deity-nav-items-mobile {
+      display: none; } }
+
+.deity-nav-items-mobile--on > ul {
+  margin-top: 0; }
+
 .deity-nav-items {
   position: absolute;
   left: 320px;
   top: 0;
-  display: flex; }
+  display: none;
+ /* @if $point == 500 {
+	  @media (min-width: 500px) { @content; }
+  }
+  @else if $point == max560 {
+    @media (max-width: 560px) { @content; }
+  }
+  @else if $point == 600 {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == 690 {
+    @media (min-width: 690px) { @content; }
+  }
+  @else if $point == 700 {
+    @media (min-width: 700px) { @content; }
+  }
+   @else if $point == 740 {
+    @media (min-width: 740px) { @content; }
+  }
+   @else if $point == 900 {
+    @media (min-width: 900px) { @content; }
+  }
+   @else if $point == 1000 {
+    @media (min-width: 1000px) { @content; }
+  }
+   @else if $point == 1100 {
+    @media (min-width: 1100px) { @content; }
+  }
+   @else if $point == 1266 {
+    @media (min-width: 1266px) { @content; }
+  }
+   @else if $point == 1400 {
+    @media (min-width: 1400px) { @content; }
+  }
+
+  
+  @else if $point == mobile {
+  	@media only screen and (max-device-width : 1136px){ @content; }
+  }*/ }
+  @media (min-width: 550px) {
+    .deity-nav-items {
+      display: flex; } }
 
 .deity-nav-item {
   display: inline-block;
@@ -362,10 +564,7 @@ body {
   -webkit-transform: skew(-25deg);
   -moz-transform: skew(-25deg);
   -o-transform: skew(-25deg);
-  background: black;
-  /*&:hover{
-  	background-color:lighten($saa-red, 10%);
-  }*/ }
+  background: black; }
 
 .deity-nav-item-hover {
   background-color: #fa755f; }
