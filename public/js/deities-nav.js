@@ -12,6 +12,8 @@ $(document).ready(function(){
 	 			$(this).toggleClass('deity-nav-item-hover');
 	 			//dname.removeClass('deity-name-active');
 	 			dname.removeClass('deity-name-active');
+	 			$('.deity-hover-name-wrapper').toggleClass('deity-hover-name-wrapper--on');
+	 			$('.deity-hover-name-wrapper').html('<p>'+ $(this).attr('data-deity-name') +'</p>')
 	 		}
 	 	})
 

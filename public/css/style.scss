@@ -34,11 +34,23 @@ body {
 		   -moz-transform: skew(-15deg);
 		     -o-transform: skew(-15deg);
 	}
+	>p{
+		font-style: italic;
+		font-size:12px;
+		margin-bottom:1em;
+	}
 	.proto-example-wrapper{
 		margin-bottom:1em;
 		>p a{
 			color:$saa-bright-red;
 			text-decoration:underline;
+		}
+		>ul{
+			margin-left:2em;
+			font-size:14px;
+			li{
+				margin-bottom: 0.5em;
+			}
 		}
 	}
 }
@@ -192,6 +204,28 @@ body {
 		
 	}
 	//display:block;
+}
+
+// Text field to be displayed while hovering over a Desktop-nav-item
+.deity-hover-name-wrapper{
+	position: absolute;
+    top: -25px;
+    right: 10px;
+    width: 285px;
+    border-bottom: 1px solid $saa-bright-red;
+    text-align: center;
+    font-size:14px;
+    line-height: 18px;
+    display:none;
+    @include opacity(0);
+    
+    @include breakpoint(550){
+    	display: block;
+    }
+}
+
+.deity-hover-name-wrapper--on{
+	@include opacity(1);
 }
 
 .deity-nav-items{

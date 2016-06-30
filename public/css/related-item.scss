@@ -9,6 +9,9 @@
     flex-basis:100%;
     margin-bottom: 10px;
   }
+  &.related-column{
+    max-width: 400px;
+  }
 }
 
 .related-item{
@@ -64,6 +67,24 @@
        }
       }
   }
+
+  .rollover-to-reveal-figcap-no-bg{
+    @extend .rollover-to-reveal-figcap;
+    
+    &:hover{
+      .related-item-caption{
+      background-color:inherit;
+    }
+    }
+
+
+
+
+  }
+
+
+
+
 
 
   .rollover-to-reveal-opacity{
