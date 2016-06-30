@@ -25,9 +25,14 @@ body {
 	@include center-max-width(625px);
 	margin:5em auto;
 	>h2{
-		color:$saa-red;
+		background-color:$saa-red;
+		padding:1em 1em;
+		color:white;
 		margin-bottom:1em;
 		font-size:18px;
+		-webkit-transform: skew(-15deg);
+		   -moz-transform: skew(-15deg);
+		     -o-transform: skew(-15deg);
 	}
 	.proto-example-wrapper{
 		margin-bottom:1em;

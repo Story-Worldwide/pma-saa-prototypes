@@ -239,9 +239,14 @@ body {
   max-width: 625px;
   margin: 5em auto; }
   .main-wrapper > h2 {
-    color: #f94a2d;
+    background-color: #f94a2d;
+    padding: 1em 1em;
+    color: white;
     margin-bottom: 1em;
-    font-size: 18px; }
+    font-size: 18px;
+    -webkit-transform: skew(-15deg);
+    -moz-transform: skew(-15deg);
+    -o-transform: skew(-15deg); }
   .main-wrapper .proto-example-wrapper {
     margin-bottom: 1em; }
     .main-wrapper .proto-example-wrapper > p a {
