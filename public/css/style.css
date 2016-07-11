@@ -702,15 +702,18 @@ body {
   left: -288px;
   width: 288px;
   height: 100%;
+  border: 1px solid black;
   -webkit-transition: left, 0.3s, ease-out;
   -moz-transition: left, 0.3s, ease-out;
   -ms-transition: left, 0.3s, ease-out;
   -o-transition: left, 0.3s, ease-out;
-  transition: left, 0.3s, ease-out;
-  overflow: scroll; }
+  transition: left, 0.3s, ease-out; }
   .filter-sidebar .filter-form-wrapper, .filter-slidedown .filter-form-wrapper {
     margin: 10px auto 100px;
-    padding: 1em; }
+    padding: 1em;
+    position: relative;
+    overflow: scroll;
+    height: 100%; }
 
 .filter-sidebar-active {
   left: 0;
@@ -909,5 +912,83 @@ body {
 
 .ui-slider-handle {
   outline: none; }
+
+.filter-form-wrapper-top-nav {
+  border-bottom: 1px solid black;
+  position: relative;
+  height: 40px;
+  display: none; }
+  .filter-form-wrapper-top-nav .filter-form-close-btn, .filter-form-wrapper-top-nav .filter-form-back-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -15px;
+    display: block;
+    height: 30px;
+    color: black;
+    line-height: 30px;
+    -webkit-transition: all, 0.2s, ease-out;
+    -moz-transition: all, 0.2s, ease-out;
+    -ms-transition: all, 0.2s, ease-out;
+    -o-transition: all, 0.2s, ease-out;
+    transition: all, 0.2s, ease-out; }
+    .filter-form-wrapper-top-nav .filter-form-close-btn:hover, .filter-form-wrapper-top-nav .filter-form-back-btn:hover {
+      text-decoration: underline; }
+  .filter-form-wrapper-top-nav .filter-form-back-btn {
+    left: 0;
+    right: auto;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    display: none; }
+    .filter-form-wrapper-top-nav .filter-form-back-btn.filter-form-back-btn--active {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      display: block; }
+  .filter-form-wrapper-top-nav.filter-form-wrapper-top-nav--active {
+    display: block; }
+
+.filter-form-main-item-wrapper {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: all, 0.2s, ease-out;
+  -moz-transition: all, 0.2s, ease-out;
+  -ms-transition: all, 0.2s, ease-out;
+  -o-transition: all, 0.2s, ease-out;
+  transition: all, 0.2s, ease-out; }
+
+.filter-form-main-item-wrapper--hidden {
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
+.filter-form-main-item > a {
+  display: block;
+  color: black;
+  padding: 3em;
+  text-align: center;
+  background-color: #f2f2f2;
+  -webkit-transition: all, 0.2s, ease-out;
+  -moz-transition: all, 0.2s, ease-out;
+  -ms-transition: all, 0.2s, ease-out;
+  -o-transition: all, 0.2s, ease-out;
+  transition: all, 0.2s, ease-out; }
+  .filter-form-main-item > a:hover {
+    background-color: #e6e6e6; }
+
+.more-options-wrapper {
+  background-color: #cccccc;
+  padding: 2em;
+  display: none;
+  -webkit-transition: all, 0.2s, ease-out;
+  -moz-transition: all, 0.2s, ease-out;
+  -ms-transition: all, 0.2s, ease-out;
+  -o-transition: all, 0.2s, ease-out;
+  transition: all, 0.2s, ease-out; }
+
+.more-options-wrapper--active {
+  display: block;
+  margin: 1em 1em 5em 1em;
+  position: absolute;
+  top: 40px;
+  left: 0; }
 
 /*# sourceMappingURL=style.css.map */

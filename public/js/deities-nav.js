@@ -44,6 +44,12 @@ $(document).ready(function(){
 	 	$('.filter-sidebar').toggleClass('filter-sidebar-active');
 	 });
 
+	 // Close butto within the Filter menu toggles the sidebar's visibility as well 
+	 $('.filter-form-close-btn').click(function(e){
+	 	e.preventDefault();
+	 	$('.filter-sidebar').toggleClass('filter-sidebar-active');
+	 });
+
 
 	 // Slidedown Filter Page
 	  $('.wrapper-header-slidedown-filter-btn').click(function(e){
@@ -84,6 +90,25 @@ $(document).ready(function(){
 	    $( "#amount" ).val($( "#slider" ).slider( "value" ) +"th Century" );
 	});
 
+	  // Filter-Slideout-3 
+	  	// Clicking on "More Options" reveals the full filter form elements
+	  	$('.main-item-more-options').click(function(e){
+	  		e.preventDefault();
+	  		$('.more-options-wrapper').toggleClass('more-options-wrapper--active');
+	  		// reveal the "back" button in the global filter form header
+	  		$('.filter-form-back-btn').toggleClass('filter-form-back-btn--active');
+	  		// Hide the 'primary' 5 filter buttons when the filter form is active
+	  		$('.filter-form-main-item-wrapper').toggleClass('filter-form-main-item-wrapper--hidden');
+	  	});
+
+	  	// Clicking on the "Back" button toggles the state of the filter menu.
+	  	$('.filter-form-back-btn').click(function(e){
+	  		e.preventDefault();
+	  		//console.log('toggle shit');
+	  		$('.more-options-wrapper').toggleClass('more-options-wrapper--active');
+	  		$('.filter-form-back-btn').toggleClass('filter-form-back-btn--active');
+	  		$('.filter-form-main-item-wrapper').toggleClass('filter-form-main-item-wrapper--hidden');
+	  	});
 	 
 
 

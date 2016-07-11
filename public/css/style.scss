@@ -313,11 +313,17 @@ body {
 	left:-288px;
 	width:288px;
 	height:100%;
+	border:1px solid black;
+	//height:93%;
 	@include transition(left, 0.3s, ease-out);
-	overflow:scroll;
+	//overflow:scroll;
 	.filter-form-wrapper{
 		margin:10px auto 100px;
     	padding: 1em;
+    	//border:2px solid red;
+    	position:relative;
+    	overflow: scroll;
+    	height:100%;
     	//border-top: 1px solid black;
     	//border-bottom: 1px solid black;
 	}
@@ -511,6 +517,91 @@ body {
 .ui-slider-handle{ outline:none; }
 
 
+
+
+// Filter Slideout 3
+// Incorporates 5 primary buttons into the filtering section and buries the Filter Form within a "More Options" sections
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.filter-form-wrapper-top-nav{
+	//border:2px solid blue;
+	border-bottom:1px solid black;
+	position:relative;
+	height:40px;
+	display:none;
+	.filter-form-close-btn{
+		position:absolute;
+		right:0;
+		top:50%;
+		margin-top:-15px;
+		display:block;
+		height:30px;
+		//width:30px;
+		color:black;
+		line-height: 30px;
+		@include transition(all, 0.2s, ease-out);
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	.filter-form-back-btn{
+		@extend .filter-form-close-btn;
+		left:0;
+		right:auto;
+		@include opacity(0);
+		display:none;
+		&.filter-form-back-btn--active{
+			@include opacity(1);
+			display:block;
+
+		}	
+	}
+	&.filter-form-wrapper-top-nav--active{
+		display:block;
+	}
+}
+
+.filter-form-main-item-wrapper{
+	//border:1px solid red;
+	@include opacity(1);
+	@include transition(all, 0.2s, ease-out);
+}
+.filter-form-main-item-wrapper--hidden{
+	@include opacity(0);
+
+}
+
+.filter-form-main-item{
+	//border:1px solid blue;
+	>a{
+		display:block;
+		color:black;
+		//border:1px solid red;
+		padding:3em;
+		text-align:center;
+		//background-color:white;
+		background-color:darken(white, 5%);
+		@include transition(all, 0.2s, ease-out);
+		&:hover{
+			background-color:darken(white, 10%);
+		}
+	}
+}
+
+.more-options-wrapper{
+	//border:2px solid purple;
+	//height:800px;
+	background-color:darken(white, 20%);
+	padding:2em;
+	display:none;
+	@include transition(all, 0.2s, ease-out);
+}
+.more-options-wrapper--active{
+	display:block;
+	margin:1em 1em 5em 1em;
+	position:absolute;
+	top:40px; left:0;
+}
 
 
 
